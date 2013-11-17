@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>nonsense</title>
+<script type="text/javascript">
+<!--
+
+
+function getElementsByClass(classnom) {
+		if (document.getElementsByClassName)
+		{
+			return document.getElementsByClassName(classnom);
+		}
+		else
+		{
+			var classlist = new Array();
+			var taglist = document.getElementsByTagName('*');
+			var findthis = new RegExp("(^|\\s)"+classnom+"(\\s|$)");
+			for (i = 0; i < taglist.length; i++) {
+					if ( findthis.test(taglist[i].className) )
+							classlist.push(taglist[i]);
+			}
+			return classlist;
+		}
+}
+
+
+function reptxt()
+{
+	var inst=getElementsByClass('skt');
+	var txt='';
+	for (i=0;i<inst.length;i++)
+	{
+		inst[i].innerHTML=iastify(inst[i].innerHTML);
+	}
+}
+
+
+function iastify(txt)
+{	
+	txt=txt.replace(/\u26/g,'&#784;');
+	txt=txt.replace(/A\^/g,'a&#772;&#770;').replace(/I\^/g,'i&#772;&#770;').replace(/U\^/g,'u&#772;&#770;').replace(/RR\^/g,'&#7771;&#772;&#770;').replace(/LL\^/g,'l&#803;&#772;&#770;').replace(/L\^/g,'l&#803;&#770;').replace(/\^/g,'&#770;');
+	txt=txt.replace(/A`/g,'a&#772;&#768;').replace(/I`/g,'i&#772;&#768;').replace(/U`/g,'u&#772;&#768;').replace(/RR`/g,'&#7771;&#772;&#768;').replace(/LL`/g,'l&#803;&#772;&#768;').replace(/L`/g,'l&#803;&#768;').replace(/`/g,'&#768;');
+	txt=txt.replace(/A"/g,'a&#772;&#769;').replace(/I"/g,'i&#772;&#769;').replace(/U"/g,'u&#772;&#769;').replace(/RR"/g,'&#7771;&#772;&#769;').replace(/LL"/g,'l&#803;&#772;&#769;').replace(/L"/g,'l&#803;&#769;').replace(/"/g,'&#769;');
+	txt=txt.replace(/A/g,'&#257;').replace(/I/g,'&#299;').replace(/U/g,'&#363;').replace(/RR/g,'&#7773;').replace(/R/g,'&#7771;').replace(/LL/g,'l&#803;&#772;').replace(/L/g,'&#7735;').replace(/E/g,'&#275;').replace(/O/g, '&#333;');
+	txt=txt.replace(/G/g,'&#7749;').replace(/J/g,'&#241;').replace(/T/g,'&#7789;').replace(/D/g,'&#7693;').replace(/N/g,'&#7751;').replace(/z/g,'&#347;').replace(/S/g,'&#7779;').replace(/M/g,'&#7747;').replace(/H/g,'&#7717;').replace(/W/g,'l&#817;').replace(/x/g,'&#7830;').replace(/f/g,'&#7723;');
+
+
+	return txt;
+}
+
+function outputHK(txt)
+{
+document.getElementById('out').innerHTML = iastify(txt);
+}
+
+-->
+</script>
+
+
+<style>
+span#out {vertical-align: -3px}
+</style>
+
+
+</head>
+
+
+
+<body onload="reptxt();">
+
+
+
+
+<form action="#" onsubmit="return false;">
+<div>Harvard-Kyoto: <input type="text" name="HK" />
+<input type="submit" onclick="outputHK(document.getElementsByName('HK')[0].value)" value="HK to IAST"/>
+</div></form>
+<p><b>
+<span id="out"></span></b></p>
+
+<p><b>
+<i><span class="skt">agnimIWe purohitaM yajJasya devaM RtvIjaM hotAraM ratnadhAtamam || 1 ||  </span></i>
+</b></p>
+<p><i>
+<b><span class="skt">A"U"RR"R"LL"L"e"o"</span></b></i>
+</p>
+
+
+
+
+
+
+</body>
+</html>
+
